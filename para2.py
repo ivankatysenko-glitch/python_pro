@@ -3,7 +3,7 @@ import random
 
 
 
-class Student:
+class Student1:
 
      def __init__(self, name):
          self.name = name
@@ -51,9 +51,11 @@ class Student:
          self.is_alive()
 
 
-student1 = Student (name="onifrilj")
+student1 = Student1 (name="onifrilj")
+student2 = Student1 (name="lilya")
 
 for day in range(365):
-    if student1.alive == False:
-        break
-    student1.live(day)
+    if student1.alive == True:
+        student1.live(day)
+    if student2.alive == True:
+            student2.live(day)
