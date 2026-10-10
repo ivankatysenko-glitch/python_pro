@@ -5,13 +5,12 @@ class Human:
 
     def __init__(self, name):
         self.name = name
-        self.age = 0  # Age in years
-        self.health = 100  # Health (from 0 to 100)
-        self.happiness = 70  # Happiness (not lower than 40%)
-        self.money = 0  # Balance
+        self.age = 0
+        self.health = 100
+        self.happiness = 70
+        self.money = 0
         self.alive = True
 
-        # Age of natural death from old age (75-95 years)
         self.max_age = random.randint(75, 95)
 
     def get_older(self):
@@ -23,7 +22,7 @@ class Human:
         else:
             aging_loss = 4
 
-        # Health decreases, but doesn't drop below 0
+
         self.health = max(0, self.health - aging_loss)
 
     def update_happiness(self, change):
@@ -104,15 +103,13 @@ class Human:
         year_title = f" Age {self.age} for {self.name} "
         print(f"{year_title:=^50}")
 
-        # 1. Start of the year and aging
+
         self.get_older()
 
-        # Check immediately if the character is alive after aging
         self.check_alive()
         if not self.alive:
             return
 
-        # 2. Event during the year
         self.random_life_event()
 
         # 3. Doctor visit
@@ -124,7 +121,6 @@ class Human:
         print()
 
 
-# Simulation startup
 person = Human(name="Alex")
 
 while person.alive:
